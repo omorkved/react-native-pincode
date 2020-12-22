@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PinStatus = void 0;
 const delay_1 = require("./delay");
 const colors_1 = require("./design/colors");
 const grid_1 = require("./design/grid");
@@ -101,7 +100,7 @@ class PinCode extends React.PureComponent {
                                 ? this.props.styleColorButtonTitleSelected
                                 : this.props.styleColorButtonTitle
                         }
-                    ] }, text)))));
+                    ] }, text + "abc")))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {
