@@ -290,7 +290,11 @@ class PinCode extends React.PureComponent<IProps, IState> {
                     : this.props.styleColorButtonTitle
                 }
               ]}>
-              {text + alphanumbericMap.get(text)}
+              {text}
+            </Text>
+            <Text
+              style={{fontSize: 10}}>
+              {alphanumbericMap.get(text)}
             </Text>
           </TouchableHighlight>
         )}

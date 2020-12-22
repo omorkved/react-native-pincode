@@ -113,7 +113,8 @@ class PinCode extends React.PureComponent {
                                 ? this.props.styleColorButtonTitleSelected
                                 : this.props.styleColorButtonTitle
                         }
-                    ] }, text + alphanumbericMap.get(text))))));
+                    ] }, text),
+                React.createElement(react_native_1.Text, { style: { fontSize: 10 } }, alphanumbericMap.get(text))))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {
