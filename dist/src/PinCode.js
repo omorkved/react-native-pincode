@@ -104,17 +104,18 @@ class PinCode extends React.PureComponent {
                 ], underlayColor: this.props.numbersButtonOverlayColor, disabled: disabled, onShowUnderlay: () => this.setState({ textButtonSelected: text }), onHideUnderlay: () => this.setState({ textButtonSelected: "" }), onPress: () => {
                     this.onPressButtonNumber(text);
                 }, accessible: true, accessibilityLabel: text },
-                React.createElement(react_native_1.Text, { style: [
-                        styles.text,
-                        this.props.styleTextButton,
-                        {
-                            opacity: opacity,
-                            color: this.state.textButtonSelected === text
-                                ? this.props.styleColorButtonTitleSelected
-                                : this.props.styleColorButtonTitle
-                        }
-                    ] }, text),
-                React.createElement(react_native_1.Text, { style: { fontSize: 10 } }, alphanumbericMap.get(text))))));
+                React.createElement(react_native_1.View, null,
+                    React.createElement(react_native_1.Text, { style: [
+                            styles.text,
+                            this.props.styleTextButton,
+                            {
+                                opacity: opacity,
+                                color: this.state.textButtonSelected === text
+                                    ? this.props.styleColorButtonTitleSelected
+                                    : this.props.styleColorButtonTitle
+                            }
+                        ] }, text),
+                    React.createElement(react_native_1.Text, { style: { fontSize: 8 } }, alphanumbericMap.get(text)))))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {

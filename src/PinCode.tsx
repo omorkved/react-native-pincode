@@ -279,6 +279,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
             }}
             accessible
             accessibilityLabel={text}>
+              <View>
             <Text
               style={[
                 styles.text,
@@ -293,9 +294,10 @@ class PinCode extends React.PureComponent<IProps, IState> {
               {text}
             </Text>
             <Text
-              style={{fontSize: 10}}>
+              style={{fontSize: 8}}>
               {alphanumbericMap.get(text)}
             </Text>
+            </View>
           </TouchableHighlight>
         )}
       </Animate>
