@@ -233,6 +233,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
   };
 
   renderButtonNumber = (text: string) => {
+    console.log("TESTING: renderButtonNumber() running");
     const disabled =
       (this.state.password.length === this.props.passwordLength ||
         this.state.showError) &&
@@ -544,6 +545,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
   };
 
   render() {
+    console.log("TESTING: render() running");
     const { password, showError, attemptFailed, changeScreen } = this.state;
     return (
       <View

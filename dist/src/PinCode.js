@@ -74,6 +74,7 @@ class PinCode extends React.PureComponent {
             }
         };
         this.renderButtonNumber = (text) => {
+            console.log("TESTING: renderButtonNumber() running");
             const disabled = (this.state.password.length === this.props.passwordLength ||
                 this.state.showError) &&
                 !this.state.attemptFailed;
@@ -291,6 +292,7 @@ class PinCode extends React.PureComponent {
             this.setState({ changeScreen: false });
     }
     render() {
+        console.log("TESTING: render() running");
         const { password, showError, attemptFailed, changeScreen } = this.state;
         return (React.createElement(react_native_1.View, { style: [
                 styles.container,
