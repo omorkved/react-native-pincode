@@ -233,6 +233,20 @@ class PinCode extends React.PureComponent<IProps, IState> {
   };
 
   renderButtonNumber = (text: string) => {
+    /* Based on standard English alphanumberic PIN pad */
+    let alphanumbericMap = new Map([
+      ["1", " "],
+      ["2", "ABC"],
+      ["3", "DEF"],
+      ["4", "GHI"],
+      ["5", "JKL"],
+      ["6", "MNO"],
+      ["7", "PQRS"],
+      ["8", "TUV"],
+      ["9", "WXYZ"],
+      ["0", " "]
+  ]); 
+
     const disabled =
       (this.state.password.length === this.props.passwordLength ||
         this.state.showError) &&
@@ -276,7 +290,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
                     : this.props.styleColorButtonTitle
                 }
               ]}>
-              {text}
+              {text + alphanumbericMap.get(text)}
             </Text>
           </TouchableHighlight>
         )}

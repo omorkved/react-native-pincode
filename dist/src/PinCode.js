@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PinStatus = void 0;
 const delay_1 = require("./delay");
 const colors_1 = require("./design/colors");
 const grid_1 = require("./design/grid");
@@ -75,6 +74,19 @@ class PinCode extends React.PureComponent {
             }
         };
         this.renderButtonNumber = (text) => {
+            /* Based on standard English alphanumberic PIN pad */
+            let alphanumbericMap = new Map([
+                ["1", " "],
+                ["2", "ABC"],
+                ["3", "DEF"],
+                ["4", "GHI"],
+                ["5", "JKL"],
+                ["6", "MNO"],
+                ["7", "PQRS"],
+                ["8", "TUV"],
+                ["9", "WXYZ"],
+                ["0", " "]
+            ]);
             const disabled = (this.state.password.length === this.props.passwordLength ||
                 this.state.showError) &&
                 !this.state.attemptFailed;
@@ -101,7 +113,7 @@ class PinCode extends React.PureComponent {
                                 ? this.props.styleColorButtonTitleSelected
                                 : this.props.styleColorButtonTitle
                         }
-                    ] }, text)))));
+                    ] }, text + alphanumbericMap.get(text))))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {
