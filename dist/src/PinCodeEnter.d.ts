@@ -35,6 +35,7 @@ export interface IProps {
     pinStatusExternal: PinResultStatus;
     status: PinStatus;
     storedPin: string | null;
+    styleAlphabet?: StyleProp<TextStyle>;
     styleButtonCircle?: StyleProp<ViewStyle>;
     styleCircleHiddenPassword?: StyleProp<ViewStyle>;
     styleCircleSizeEmpty?: number;

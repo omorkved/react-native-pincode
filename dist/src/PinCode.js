@@ -75,16 +75,16 @@ class PinCode extends React.PureComponent {
         };
         this.renderButtonNumber = (text) => {
             /* Based on standard English alphanumberic PIN pad */
-            let alphanumbericMap = new Map([
+            let alphanumericMap = new Map([
                 ["1", " "],
-                ["2", "A B C"],
-                ["3", "D E F"],
-                ["4", "G H I"],
-                ["5", "J K L"],
-                ["6", "M N O"],
-                ["7", "P Q R S"],
-                ["8", "T U V"],
-                ["9", "W X Y Z"],
+                ["2", "ABC"],
+                ["3", "DEF"],
+                ["4", "GHI"],
+                ["5", "JKL"],
+                ["6", "MNO"],
+                ["7", "PQRS"],
+                ["8", "TUV"],
+                ["9", "WXYZ"],
                 ["0", " "]
             ]);
             const disabled = (this.state.password.length === this.props.passwordLength ||
@@ -115,7 +115,16 @@ class PinCode extends React.PureComponent {
                                     : this.props.styleColorButtonTitle
                             }
                         ] }, text),
-                    React.createElement(react_native_1.Text, { style: { fontSize: 10 } }, alphanumbericMap.get(text)))))));
+                    React.createElement(react_native_1.Text, { style: [
+                            styles.tinytext,
+                            this.props.styleAlphabet,
+                            {
+                                opacity: opacity,
+                                color: this.state.textButtonSelected === text
+                                    ? this.props.styleColorButtonTitleSelected
+                                    : this.props.styleColorButtonTitle
+                            }
+                        ] }, alphanumericMap.get(text)))))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {
@@ -511,6 +520,10 @@ const styles = react_native_1.StyleSheet.create({
     text: {
         fontSize: grid_1.grid.unit * 2,
         fontWeight: "200"
+    },
+    tinytext: {
+        fontSize: grid_1.grid.unit / 2,
+        fontWeight: "300"
     },
     buttonCircle: {
         alignItems: "center",

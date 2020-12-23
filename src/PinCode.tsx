@@ -47,6 +47,7 @@ export interface IProps {
   previousPin?: string
   sentenceTitle: string
   status: PinStatus
+  styleAlphabet?: StyleProp<TextStyle>
   styleButtonCircle?: StyleProp<ViewStyle>
   styleCircleHiddenPassword?: StyleProp<ViewStyle>
   styleCircleSizeEmpty?: number
@@ -234,16 +235,16 @@ class PinCode extends React.PureComponent<IProps, IState> {
 
   renderButtonNumber = (text: string) => {
     /* Based on standard English alphanumberic PIN pad */
-    let alphanumbericMap = new Map([
+    let alphanumericMap = new Map([
       ["1", " "],
-      ["2", "A B C"],
-      ["3", "D E F"],
-      ["4", "G H I"],
-      ["5", "J K L"],
-      ["6", "M N O"],
-      ["7", "P Q R S"],
-      ["8", "T U V"],
-      ["9", "W X Y Z"],
+      ["2", "ABC"],
+      ["3", "DEF"],
+      ["4", "GHI"],
+      ["5", "JKL"],
+      ["6", "MNO"],
+      ["7", "PQRS"],
+      ["8", "TUV"],
+      ["9", "WXYZ"],
       ["0", " "]
   ]); 
 
@@ -294,8 +295,17 @@ class PinCode extends React.PureComponent<IProps, IState> {
               {text}
             </Text>
             <Text
-              style={{fontSize: 10}}>
-              {alphanumbericMap.get(text)}
+              style={[
+                styles.tinytext,
+                this.props.styleAlphabet,
+              {
+                opacity: opacity,
+                color: this.state.textButtonSelected === text
+                  ? this.props.styleColorButtonTitleSelected
+                  : this.props.styleColorButtonTitle
+              }
+              ]}>
+              {alphanumericMap.get(text)}
             </Text>
             </View>
           </TouchableHighlight>
@@ -821,6 +831,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: grid.unit * 2,
     fontWeight: "200"
+  },
+  tinytext: {
+    fontSize: grid.unit/2,
+    fontWeight: "300"
   },
   buttonCircle: {
     alignItems: "center",

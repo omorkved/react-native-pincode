@@ -27,6 +27,7 @@ export interface IProps {
     previousPin?: string;
     sentenceTitle: string;
     status: PinStatus;
+    styleAlphabet?: StyleProp<TextStyle>;
     styleButtonCircle?: StyleProp<ViewStyle>;
     styleCircleHiddenPassword?: StyleProp<ViewStyle>;
     styleCircleSizeEmpty?: number;

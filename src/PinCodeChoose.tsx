@@ -28,6 +28,7 @@ export interface IProps {
   pinCodeKeychainName: string
   pinCodeVisible?: boolean
   storePin: any
+  styleAlphabet?: StyleProp<TextStyle>
   styleButtonCircle?: StyleProp<ViewStyle>
   styleCircleHiddenPassword?: StyleProp<ViewStyle>
   styleCircleSizeEmpty?: number
@@ -145,6 +146,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             pinCodeVisible={this.props.pinCodeVisible}
             sentenceTitle={this.props.titleChoose}
             status={PinStatus.choose}
+            styleAlphabet={this.props.styleAlphabet}
             styleButtonCircle={this.props.styleButtonCircle}
             styleCircleHiddenPassword={this.props.styleCircleHiddenPassword}
             styleCircleSizeEmpty={this.props.styleCircleSizeEmpty}
@@ -225,6 +227,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             titleConfirmFailed={
               this.props.titleConfirmFailed || 'Your entries did not match'
             }
+            styleAlphabet={this.props.styleAlphabet}
             styleButtonCircle={this.props.styleButtonCircle}
             styleCircleHiddenPassword={this.props.styleCircleHiddenPassword}
             styleCircleSizeEmpty={this.props.styleCircleSizeEmpty}

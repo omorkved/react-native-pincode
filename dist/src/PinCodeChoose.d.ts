@@ -24,6 +24,7 @@ export interface IProps {
     pinCodeKeychainName: string;
     pinCodeVisible?: boolean;
     storePin: any;
+    styleAlphabet?: StyleProp<TextStyle>;
     styleButtonCircle?: StyleProp<ViewStyle>;
     styleCircleHiddenPassword?: StyleProp<ViewStyle>;
     styleCircleSizeEmpty?: number;
