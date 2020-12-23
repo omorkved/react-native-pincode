@@ -115,16 +115,17 @@ class PinCode extends React.PureComponent {
                                     : this.props.styleColorButtonTitle
                             }
                         ] }, text),
-                    React.createElement(react_native_1.Text, { style: [
-                            styles.tinytext,
-                            this.props.styleAlphabet,
-                            {
-                                opacity: opacity,
-                                color: this.state.textButtonSelected === text
-                                    ? this.props.styleColorButtonTitleSelected
-                                    : this.props.styleColorButtonTitle
-                            }
-                        ] }, alphanumericMap.get(text)))))));
+                    ((this.props.alphabetCharsVisible) &&
+                        React.createElement(react_native_1.Text, { style: [
+                                styles.tinytext,
+                                this.props.styleAlphabet,
+                                {
+                                    opacity: opacity,
+                                    color: this.state.textButtonSelected === text
+                                        ? this.props.styleColorButtonTitleSelected
+                                        : this.props.styleColorButtonTitle
+                                }
+                            ] }, alphanumericMap.get(text))))))));
         };
         this.endProcess = (pwd) => {
             setTimeout(() => {
@@ -441,6 +442,7 @@ class PinCode extends React.PureComponent {
     }
 }
 PinCode.defaultProps = {
+    alphabetCharsVisible: false,
     styleButtonCircle: null,
     colorCircleButtons: "rgb(242, 245, 251)",
     styleDeleteButtonColorHideUnderlay: "rgb(211, 213, 218)",

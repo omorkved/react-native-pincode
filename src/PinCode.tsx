@@ -25,6 +25,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
  */
 
 export interface IProps {
+  alphabetCharsVisible?: boolean
   buttonDeleteComponent?: any
   buttonDeleteText?: string
   buttonNumberComponent?: any
@@ -105,6 +106,7 @@ export enum PinStatus {
 
 class PinCode extends React.PureComponent<IProps, IState> {
   static defaultProps: Partial<IProps> = {
+    alphabetCharsVisible: false,
     styleButtonCircle: null,
     colorCircleButtons: "rgb(242, 245, 251)",
     styleDeleteButtonColorHideUnderlay: "rgb(211, 213, 218)",
@@ -294,19 +296,21 @@ class PinCode extends React.PureComponent<IProps, IState> {
               ]}>
               {text}
             </Text>
-            <Text
-              style={[
-                styles.tinytext,
-                this.props.styleAlphabet,
-              {
-                opacity: opacity,
-                color: this.state.textButtonSelected === text
-                  ? this.props.styleColorButtonTitleSelected
-                  : this.props.styleColorButtonTitle
-              }
-              ]}>
-              {alphanumericMap.get(text)}
-            </Text>
+            {((this.props.alphabetCharsVisible) &&
+              <Text
+                style={[
+                  styles.tinytext,
+                  this.props.styleAlphabet,
+                {
+                  opacity: opacity,
+                  color: this.state.textButtonSelected === text
+                    ? this.props.styleColorButtonTitleSelected
+                    : this.props.styleColorButtonTitle
+                }
+                ]}>
+                {alphanumericMap.get(text)}
+              </Text>
+            )}
             </View>
           </TouchableHighlight>
         )}
