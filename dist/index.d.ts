@@ -3,6 +3,7 @@ import { PinResultStatus } from "./src/utils";
 import * as React from "react";
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
 export declare type IProps = {
+    alphabetCharsVisible?: boolean;
     bottomLeftComponent?: any;
     buttonComponentLockedPage?: any;
     buttonDeleteComponent?: any;
@@ -36,6 +37,7 @@ export declare type IProps = {
     status: "choose" | "enter" | "locked";
     storedPin?: string;
     storePin?: any;
+    styleAlphabet?: StyleProp<TextStyle>;
     styleMainContainer?: StyleProp<ViewStyle>;
     stylePinCodeChooseContainer?: StyleProp<ViewStyle>;
     stylePinCodeEnterContainer?: StyleProp<ViewStyle>;
